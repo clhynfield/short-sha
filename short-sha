@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-echo "$(date +%Y%m%d%H%M%S)$RANDOM" | shasum
+SHA=$(echo "$(date +%Y%m%d%H%M%S)$RANDOM" | shasum)
+echo "${SHA:0:5}"
