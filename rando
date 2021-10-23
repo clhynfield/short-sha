@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+rando() {
+  local length=${1:-5}
+
+  local sha=$(echo "$(date +%Y%m%d%H%M%S.%N)" | shasum)
+  echo "$sha" | awk '{print substr($1,1,'$length')}'
+}
+
+if [ "${0##*/}" = 'rando' ]; then
+  rando "$@"
+  exit $?
+fi

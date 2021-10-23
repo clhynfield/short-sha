@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-length=${1:-5}
-
-sha=$(echo "$(date +%Y%m%d%H%M%S)$RANDOM" | shasum)
-echo "${sha:0:$length}"
